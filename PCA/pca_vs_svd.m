@@ -1,7 +1,7 @@
 % Read data
 x = readmatrix('D:\University of Bristol\Second Semester\Mathematical and Data Modeling\experiment\return.csv');
 x = x(:,2:end);
-tau = 1;
+tau = 0.1;
 
 % iterate experiment
 Ab = 3;
