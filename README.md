@@ -1,6 +1,6 @@
 # Mathematical-and-Data-Modelling
 
-(Please see more detail in our report)
+(Please see more details in our report)
 
 ### Singular Value Decomposition (SVD)
 
