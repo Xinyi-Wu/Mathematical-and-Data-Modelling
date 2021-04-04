@@ -16,7 +16,7 @@ ER_svd = [];
 mean_ER = [];
 for j = 1:n_Di
     for i = 1:n_iter
-        [ER_svd(:,i),a, b] = mysvd3(x, tau, Ab, Di(j), Indi, del_k);
+        [ER_svd(:,i), err, err_all] = mysvd3(x, tau, Ab, Di(j), Indi, del_k);
     end
     mean_ER(:,j) = mean(ER_svd');
 end
