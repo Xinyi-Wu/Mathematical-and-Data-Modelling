@@ -1,20 +1,21 @@
-function [err] = mysvd_pca(x,tau,delta)
+function [err] = mysvd_pca(x, tau, Ab, Re, delta)
 % MYSVD_PCA  Comparison the error between SVD and PCA in Black-Litterman
 % Model
 %
-% Usage: [err] = mysvd_pca(x,tau)
+% Usage: [err] = mysvd_pca(x, tau, Ab, Re, delta)
 %        PCA can be only used in the case of N>=K
 %
 % Inputs: x = experimental data
 %         tau = parameter
+%         Ab = number of absolute views
+%         Re = number of relative views
+%         del_k = number of reduation on sigular
 %
 % Output: err = 2-by-1 matrix for error in svd and pca seperately
 
 % set initial invariables
 N = size(x,2);          % number of asset
-Ab = 2;                 % number of absolute views
-Re = 3;                 % number of relative views
-K = Ab + Re;
+K = Ab + Re;            % number of views
 index_K = randperm(K);  % get the randomly-selected indices
 P = zeros(K,N);
 for i=1:Ab
