@@ -10,17 +10,16 @@ n_iter = 60;
 n_Di = 40;
 Di = 1:1:n_Di;
 Indi = 20;
-err = [];
+err_all = [];
 
 % iterate experiment
 for t=1:length(del_k)
-    err = zeros(n_iter, n_Ab);
     for i=1:n_iter
         for j=1:n_Ab
-            err(i,j) = mysvd3(x, tau, Ab, Di(j), Indi, del_k(t));
+            [ER_svd, err, err_all] = mysvd3(x, tau, Ab, Di(j), Indi, del_k(t));
         end
     end
-plot(Di,mean(err),'Linewidth',2);
+plot(Di,mean(err_all),'Linewidth',2);
 hold on;
 end
 xlabel('Number of Relative Views'); ylabel('Error');
